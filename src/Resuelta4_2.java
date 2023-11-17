@@ -1,8 +1,8 @@
 import java.util.Scanner;
-public class Reslta4_2 {
+public class Resuelta4_2 {
     static void mostrar ( int a , int b) {
-        int mayor = a > b ? a : b;
-        int menor = a < b ? a : b;
+        int mayor = Math.max(a, b);
+        int menor = Math.min(a, b);
         for (int i = menor; i <= mayor; i++) {
             System.out.println(i);
         }
