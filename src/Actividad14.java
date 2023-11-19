@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Actividad14 {
     static int calculadoraSedundos (int d, int h, int min) {
         //Se crea la función.
-        int SUMA = 0; // Se inicialzará en 0.
+        int SUMA; // Se inicialzará en 0.
         int segD = d * 86400; //Conversión de días a segundos. (24(H de un dia)*60(min de 1 hora)*60(s de un min)
         int segH = h * 3600;// Conversión de horas a segundos.
         int segMin = min * 60; // Conversión de minutos a segundos.
