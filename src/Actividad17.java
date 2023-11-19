@@ -4,6 +4,8 @@ public class Actividad17 {
         // Principal. Primero pido números y esclarezco que hacer con la función.
         Scanner sc = new Scanner(System.in);
         int num1, num2; // Vamos a trabajar con números enteros para sacar los divisores.
+
+
         do {
             System.out.println("Escribe un número: ");
             num1 = sc.nextInt();
@@ -12,6 +14,8 @@ public class Actividad17 {
             }
         }while(num1 <= 0);
         //Bucle 1 para pedir número y que sea positivo. Para no tener que volver a pedir los dos.
+
+
         do{
             System.out.println("Escribe otro número: ");
             num2 = sc.nextInt();
@@ -20,36 +24,44 @@ public class Actividad17 {
             }
         }while(  num2 <= 0);
         //Bucle 2 para pedir número y que sea positivo. Para no tener que volver a pedir los dos.
+
+
         if (numerosAmigos(num1,num2)){
             System.out.println("Los números " + num1 + " y " + num2 + " son amigos.");
         }else{
             System.out.println("Los números no son amigos.");
         }
     }
+
+
     public static boolean numerosAmigos(int num1, int num2) {
-        int suma = 1;  // Inicializamos con 1 ya que 1 es divisor propio de todos los números
+        //Boolean porque el ejercicio nos pide una respuesta no númerica.
+        int suma1 = 0;
+        int suma2 = 0;
         boolean respuesta = false;
+
+
         for (int i = 1; i < num1; i++) { // Empezamos con i en 1, acaba cuando i llega a num1.
+
             if (num1 % i == 0) {
                 // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
-                suma += i; // Se suma 1
+                suma1 += i; // Se suma 1
             }
-        }
-        if (suma == num2){
-            //Si la suma de los divisores es igual al num2, son números amigos.
-            respuesta = true;
+
         }
         for (int i = 1; i < num2; i++) { // Empezamos con i en 1, acaba cuando i llega a num2.
             if (num2 % i == 0) {
                 // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
-                suma += i; // Se suma 1
+                suma2 += i; // Se suma 1
             }
         }
-        if (suma == num1){
-            //Si la suma de los divisores es igual al num1, son números amigos.
+
+        if (suma2 == num1 && suma1 == num2) {
             respuesta = true;
         }
-
+        System.out.println("La suma de divisores de a es: " + suma1);
+        System.out.println("La suma de divisores de b es: " + suma2);
         return (respuesta);
+        //Les pongo en la respuesta a pantalla a y b porque he leido después en el enunciado que así las nombraba el ejercicio.
     }
 }
