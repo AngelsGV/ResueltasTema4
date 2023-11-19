@@ -20,8 +20,31 @@ public class Actividad17 {
             }
         }while(  num2 <= 0);
         //Bucle 2 para pedir número y que sea positivo. Para no tener que volver a pedir los dos.
+        if (numerosAmigos(num1,num2)){
+            System.out.println("Los números " + num1 + " y " + num2 + " son amigos.");
+        }else{
+            System.out.println("Los números no son amigos.");
+        }
     }
-    static int numerosAmigos(int num1,int num2){
-    return(numerosAmigos(num1,num2));
+    public static boolean numerosAmigos(int num1, int num2, int suma) {
+        suma = 1;  // Inicializamos con 1 ya que 1 es divisor propio de todos los números
+        for (int i = 1; i < num1; i++) {
+            if (num1 % i == 0) { // Comprueba si i es divisor de num1.
+                suma += i;
+                if (i != num1 / i) {
+                    suma += num1 / i;
+                }
+            }
+        }
+        for (int i = 1; i < num1; i++) {
+            if (num2 % i == 0) { // Comprueba si i es divisor de num1.
+                suma += i;
+                if (i != num2 / i) {
+                    suma += num2 / i;
+                }
+            }
+        }
+
+        return (suma);
     }
 }
