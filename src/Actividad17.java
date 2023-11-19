@@ -6,12 +6,17 @@ public class Actividad17 {
         do {
             System.out.println("Escribe un número: ");
             num1 = sc.nextInt();
-            System.out.println("Escribe otro número: ");
-            num2 = sc.nextInt();
-            if (num1 <= 0 || num2 <= 0){
+            if (num1 <= 0 ){
                 System.out.println("Error. Los números tienen que ser positivos.");
             }
-        }while(num1 <= 0 || num2 <= 0);
+        }while(num1 <= 0);
+        do{
+            System.out.println("Escribe otro número: ");
+            num2 = sc.nextInt();
+            if (num2 <= 0){
+                System.out.println("Error. Los números tienen que ser positivos.");
+            }
+        }while(  num2 <= 0);
 
     }
 }
