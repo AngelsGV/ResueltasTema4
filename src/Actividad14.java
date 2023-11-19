@@ -13,7 +13,6 @@ public class Actividad14 {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        // Pediremos números enteros porque el tiempo no se da en decimales.
         System.out.println("Introduce los días: ");
         int d = sc.nextInt();
         System.out.println("Introduce las horas: ");
