@@ -26,25 +26,30 @@ public class Actividad17 {
             System.out.println("Los números no son amigos.");
         }
     }
-    public static boolean numerosAmigos(int num1, int num2, int suma) {
-        suma = 1;  // Inicializamos con 1 ya que 1 es divisor propio de todos los números
-        for (int i = 1; i < num1; i++) {
-            if (num1 % i == 0) { // Comprueba si i es divisor de num1.
-                suma += i;
-                if (i != num1 / i) {
-                    suma += num1 / i;
-                }
+    public static boolean numerosAmigos(int num1, int num2) {
+        int suma = 1;  // Inicializamos con 1 ya que 1 es divisor propio de todos los números
+        boolean respuesta = false;
+        for (int i = 1; i < num1; i++) { // Empezamos con i en 1, acaba cuando i llega a num1.
+            if (num1 % i == 0) {
+                // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
+                suma += i; // Se suma 1
             }
         }
-        for (int i = 1; i < num1; i++) {
-            if (num2 % i == 0) { // Comprueba si i es divisor de num1.
-                suma += i;
-                if (i != num2 / i) {
-                    suma += num2 / i;
-                }
+        if (suma == num2){
+            //Si la suma de los divisores es igual al num2, son números amigos.
+            respuesta = true;
+        }
+        for (int i = 1; i < num2; i++) { // Empezamos con i en 1, acaba cuando i llega a num2.
+            if (num2 % i == 0) {
+                // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
+                suma += i; // Se suma 1
             }
+        }
+        if (suma == num1){
+            //Si la suma de los divisores es igual al num1, son números amigos.
+            respuesta = true;
         }
 
-        return (suma);
+        return (respuesta);
     }
 }
