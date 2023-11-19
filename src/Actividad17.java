@@ -10,6 +10,7 @@ public class Actividad17 {
                 System.out.println("Error. Los números tienen que ser positivos.");
             }
         }while(num1 <= 0);
+        //Bucle 1 para pedir número y que sea positivo. Para no tener que volver a pedir los dos.
         do{
             System.out.println("Escribe otro número: ");
             num2 = sc.nextInt();
@@ -17,6 +18,7 @@ public class Actividad17 {
                 System.out.println("Error. Los números tienen que ser positivos.");
             }
         }while(  num2 <= 0);
+        //Bucle 2 para pedir número y que sea positivo. Para no tener que volver a pedir los dos.
 
     }
 }
