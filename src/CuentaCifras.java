@@ -6,23 +6,27 @@ public class CuentaCifras {
 
     System.out.println("Introduce un número entero positivo: ");
     int num =sc.nextInt();
-if (num<0){
+
+if (num<0){ // Si no se introduce el núm positivo no se hace la función del programa.
     System.out.println("No has introducido un número positivo.");
+
 }else{
+
     do{
        int cantidad = cuentaCifras(num);
         System.out.println("El número " + num + " tiene " + cantidad + " cifras.");
         break;//La unica forma de salir del bucle infinito que se producía.
-    } while (num>0); //Cuando sea positivo se producira la lectura de la función que cuanta las cifras del num.
+    } while (num>0);
+    //Cuando sea positivo se producira la lectura de la función que cuanta las cifras del num.
 }
     }
 
 static int cuentaCifras(int a){
         int cifras = 0;
 
-        if (a == 0 && a<10) {
+        if (a<10) {
 
-            cifras = 1; // El número 0 tiene una cifra, pero no lo contamos como positivo
+            cifras = 1; // El número 0 tiene una cifra.
 
         } else {
 
@@ -32,12 +36,11 @@ static int cuentaCifras(int a){
             }
 }return(cifras);
 
-
-        // Cuando el num solo tiene 1 cifra no cierra el bucle. No cierra bucle
-
+// PROBLEMAS SOLUCIONADOS: Cuando el num solo tiene 1 cifra no cierra el bucle. No cierra bucle
 
 
 
+//VERSIÓN ANTERIOR A LA DEFINITIVA:
 
 
 //static void cuentaCifras(int n){
