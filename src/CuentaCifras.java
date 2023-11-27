@@ -6,15 +6,19 @@ public class CuentaCifras {
 
     System.out.println("Introduce un número entero positivo: ");
     int num =sc.nextInt();
-
+if (num<0){
+    System.out.println("No has introducido un número positivo.");
+}else{
     do{
-       int cantidad = cuentaCifras(num) - 1;
+       int cantidad = cuentaCifras(num);
         System.out.println("El número " + num + " tiene " + cantidad + " cifras.");
+        break;//La unica forma de salir del bucle infinito que se producía.
     } while (num>0); //Cuando sea positivo se producira la lectura de la función que cuanta las cifras del num.
 }
+    }
 
 static int cuentaCifras(int a){
-        int cifras = 1;
+        int cifras = 0;
 
         if (a == 0 && a<10) {
 
