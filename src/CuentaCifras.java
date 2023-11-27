@@ -4,10 +4,10 @@ public class CuentaCifras {
     public static void main(String[] args){ //Principal
     Scanner sc = new Scanner(System.in);
     System.out.println("Introduce un número entero positivo: ");
-    int num;
+    int num =sc.nextInt();
     do{
        int cantidad = cuentaCifras(num);
-        System.out.println("El número " + num + " tiene " + cantidad + " cifras.");
+        System.out.println("El número " + num + " tiene " + (cantidad - 1)+ " cifras.");
     }while (num % 2 == 0); //Cuando sea positivo se producira la lectura de la función que cuanta las cifras del num.
 }
 static int cuentaCifras(int a){
