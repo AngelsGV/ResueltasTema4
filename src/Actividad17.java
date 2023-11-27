@@ -7,11 +7,11 @@ public class Actividad17 {
 
         System.out.println("Escribe un número: ");
         num1 = sc.nextInt();
-        pedirNumero(num1);
+        pedirNumero(num1); // Función nueva lo llama con num1
 
         System.out.println("Escribe otro número: ");
         num2 = sc.nextInt();
-        pedirNumero(num2);
+        pedirNumero(num2); // Función nueva lo llama con num2
 
       //  do {
          //   System.out.println("Escribe un número: ");
@@ -49,24 +49,30 @@ public class Actividad17 {
         // Damos este valor inicial para que luego podamos poner que
         // si se cumplen las condiciones, la respuesta será verdadera.
 
+        suma1 = numAmigos(num1);
+        suma2 = numAmigos(num2);
 
-        for (int i = 1; i < num1; i++) {
+        // En ambos caso devuelve la suma de num.
+        // Por lo que se tiene que especificar que suma es para el código de después.
+
+
+       // for (int i = 1; i < num1; i++) {
             // Empezamos con i en 1, acaba cuando i llega a num1.
             // El mismo número no lo vamos a contar como divisor como nos dice en el enunciado.
 
-            if (num1 % i == 0) {
+         //   if (num1 % i == 0) {
                 // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
-                suma1 += i; // Suma los divisores posibles sin contar el mismo número.
-            }
+            //    suma1 += i; // Suma los divisores posibles sin contar el mismo número.
+          //  }
 
-        }
-        for (int i = 1; i < num2; i++) { // Empezamos con i en 1, acaba cuando i llega a num2.
+       // }
+        //for (int i = 1; i < num2; i++) { // Empezamos con i en 1, acaba cuando i llega a num2.
             // El mismo número no lo vamos a contar como divisor como nos dice en el enunciado.
-            if (num2 % i == 0) {
+       //     if (num2 % i == 0) {
                 // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
-                suma2 += i; // Suma los divisores posibles sin contar el mismo número.
-            }
-        }
+              //  suma2 += i; // Suma los divisores posibles sin contar el mismo número.
+         //   }
+     //   }
 
         if (suma2 == num1 && suma1 == num2) {
             respuesta = true;
@@ -78,7 +84,7 @@ public class Actividad17 {
         return (respuesta);
         //Les pongo en la respuesta a pantalla a y b porque he leido después en el enunciado que así las nombraba el ejercicio.
     }
-    static void pedirNumero (int num){
+    static void pedirNumero (int num){ // void perque torna un missatge no númeric.
         Scanner sc = new Scanner(System.in);
         do {
             if (num <= 0 ){ //Si el num1 es menor o igual a 0 da mensaje de error y volvera a pedirlo.
@@ -87,4 +93,20 @@ public class Actividad17 {
         }while(num <= 0);
         //Bucle 1 para pedir número y que sea positivo. Para no tener que volver a pedir los dos.
     }
+    static int numAmigos(int num){ // int perque torna el resultat de la suma en números enters.
+        int suma =0; //Contador empieza en 0.
+        for (int i = 1; i < num; i++) {
+            // Empezamos con i en 1, acaba cuando i llega a num1.
+            // El mismo número no lo vamos a contar como divisor como nos dice en el enunciado.
+            if (num % i == 0) {
+                // Comprueba si i es divisor de num1. Si el resto es igual a 0, es divisor.
+                suma += i; // Suma los divisores posibles sin contar el mismo número.
+            }
+
+        }
+        return suma;
+    }
 }
+// No he borrat lo que tenía abans per a poder estudiar jo después. Gracies.
+//Última actualització  el 27/11/23
+//Sòc una crack!
